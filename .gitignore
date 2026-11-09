@@ -1,0 +1,16 @@
+/.local/
+/backups/
+/tests/fixtures/
+/native/build/
+/native/build-local.cmd
+*.exe
+*.dll
+*.obj
+*.pdb
+*.bin
+*.tmp
+*.log
+*.zip
+*.user
+Thumbs.db
+.DS_Store

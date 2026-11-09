@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Windows PowerShell source checks
+        shell: powershell
+        run: .\tests\Test-Sources.ps1
+      - name: PowerShell 7 source checks
+        shell: pwsh
+        run: .\tests\Test-Sources.ps1
+      - name: Native source and handoff tests
+        shell: powershell
+        run: .\tests\Test-Dispatcher.ps1

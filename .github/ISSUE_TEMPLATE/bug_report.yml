@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a reproducible failure without private logs or executable files.
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach vendor executables, private screenshots, raw logs, tokens, or backups.
+  - type: input
+    id: version
+    attributes:
+      label: Tool release and Windows build
+      placeholder: v0.1.0 / Windows 10 22H2 build 19045
+    validations:
+      required: true
+  - type: input
+    id: hash
+    attributes:
+      label: Original helper SHA-256 and Sky version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and sanitized error
+      description: Include the action, expected behavior, actual behavior, and whether original-API capture-click-capture was tested.
+    validations:
+      required: true
